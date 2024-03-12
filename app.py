@@ -3,8 +3,9 @@ import streamlit as st
 st.title('Calculadora de Puntuación para Beca')
 
 # Definiciones de puntos máximos y por actividad
-max_puntos_academico = 130  # Máximo para grado académico
-max_puntos_actualizacion = 200  # Máximo total para actualización en el último año
+max_puntos_docencia = 250 # Puntuaciion maxima, 1.0 Calidad en docencia
+max_puntos_academico = 130  # Máximo para grado académico 1.1.1
+max_puntos_actualizacion = 200  # Máximo total para actualización en el último año 1.1.2
 
 # Grado Académico
 st.header("1.1.1 Grado Académico")
@@ -51,7 +52,7 @@ st.progress(total_puntos_actualizacion / max_puntos_actualizacion)
 
 # Cálculo del total general y barra de progreso global
 total_general = puntos_grado_academico + total_puntos_actualizacion
-max_total_general = max_puntos_academico + max_puntos_actualizacion  # Ajusta según el máximo total de todos los rubros
+max_total_general = max_puntos_docencia #max_puntos_academico + max_puntos_actualizacion  # Ajusta según el máximo total de todos los rubros
 st.header('Total de puntos obtenidos')
 st.subheader(f'Total de puntos: {total_general} de {max_total_general}')
 st.progress(total_general / max_total_general)
