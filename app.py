@@ -48,7 +48,7 @@ with st.expander("Información sobre cursos de formación docente"):
 st.progress(puntos_por_cursos / max_puntos_capacitacion)
 
 # Cálculo del total de puntos en actualización
-total_puntos_actualizacion = puntos_por_cursos + puntos_por_cursos_disciplinares + puntos_por_eventos + puntos_por_diplomados
+total_puntos_actualizacion = puntos_por_cursos #+ puntos_por_cursos_disciplinares + puntos_por_eventos + puntos_por_diplomados
 st.write(f"Total de puntos en Actualización en el último año: {total_puntos_actualizacion} de {max_puntos_actualizacion}")
 st.progress(total_puntos_actualizacion / max_puntos_actualizacion)
 
