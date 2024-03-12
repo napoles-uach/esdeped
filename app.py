@@ -33,7 +33,7 @@ with st.expander("Información sobre Grado Académico"):
     grado de estudios. No se aceptarán Actas de Examen. Máximo 130 puntos.
     """)
 #st.progress(puntos_grado_academico / max_puntos_academico)
-st.progress(puntos_grado_academico / max_total_general)
+st.progress(puntos_grado_academico / max_puntos_docencia)
 
 # Actualización en el último año
 st.header("1.1.2 Actualización en el último año")
