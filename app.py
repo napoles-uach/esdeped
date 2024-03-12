@@ -7,6 +7,7 @@ st.title('Calculadora de Puntuación para Beca')
 max_puntos_docencia = 250 # Puntuaciion maxima, 1.0 Calidad en docencia
 max_puntos_academico = 130  # Máximo para grado académico 1.1.1
 max_puntos_actualizacion = 200  # Máximo total para actualización en el último año 1.1.2
+max_puntos_cursoscudd = 30
 
 # Grado Académico
 st.header("1.1.1 Grado Académico")
@@ -28,23 +29,22 @@ with st.expander("Información sobre Grado Académico"):
     """)
 st.progress(puntos_grado_academico / max_puntos_academico)
 
-# Actualización en el último año: Resumen de subsecciones
+# Actualización en el último año
 st.header("1.1.2 Actualización en el último año")
-total_puntos_actualizacion = 0  # Inicialización del total de puntos en actualización
 
-# Subsecciones de Actualización
-# Variables para cada subsección con valores por defecto
-puntos_por_cursos = 0
-puntos_por_cursos_disciplinares = 0
-puntos_por_eventos = 0
-puntos_por_diplomados = 0
+# Cursos de formación docente y/o actualización pedagógica
+cursos_completados = st.slider('1.1.2.1 Cursos de formación docente y/o actualización pedagógica completados (horas)', 0, 60, 0, 1)
+puntos_por_cursos = min(0.5 * cursos_completados, max_puntos_capacitacion)
 
-# Implementación de cada subsección...
-
-# Cálculo y muestra de puntos por subsección
-# Ejemplo para cursos de formación docente:
-# puntos_por_cursos = <cálculo según la entrada del usuario>
-# st.progress(puntos_por_cursos / max_puntos_subsección)
+with st.expander("Información sobre cursos de formación docente"):
+    st.write("""
+    Se tomarán en cuenta los cursos o talleres cuyo comprobante esté fechado dentro del periodo
+    enero-diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
+    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
+    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
+    considerar para el rubro de capacitación pedagógica es de 30 puntos.
+    """)
+st.progress(puntos_por_cursos / max_puntos_cursoscudd)
 
 # Cálculo del total de puntos en actualización
 total_puntos_actualizacion = puntos_por_cursos + puntos_por_cursos_disciplinares + puntos_por_eventos + puntos_por_diplomados
