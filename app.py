@@ -2,7 +2,12 @@ import streamlit as st
 
 st.title('Calculadora de Puntuación para Beca')
 
-# Sección de Actualización en el último año
+# Definiciones de puntos máximos y por actividad
+max_puntos_capacitacion = 30  # Máximo para capacitación pedagógica
+max_puntos_eventos = 12  # Máximo para asistencia a eventos
+puntos_por_evento = 3  # Puntos otorgados por evento asistido
+max_puntos_diplomados = 40  # Máximo para diplomados acreditados
+
 st.header("1.1.2 Actualización en el último año")
 
 # Cursos de formación docente y/o actualización pedagógica
@@ -14,7 +19,7 @@ puntos_por_cursos = (curso1 + curso2 + curso3) * 10
 
 # Asistencia a eventos profesionales
 st.subheader('1.1.2.3 Asistencia a eventos profesionales')
-eventos_asistidos = st.slider('Cantidad de eventos profesionales asistidos', 0, 4, 0)
+eventos_asistidos = st.slider('Cantidad de eventos profesionales asistidos', 0, 4, 0)  # Asumiendo un máximo de 4 eventos para simplificar
 puntos_por_eventos = min(eventos_asistidos * puntos_por_evento, max_puntos_eventos)
 
 # Diplomado acreditado por el área pedagógica y/o disciplinar del docente
