@@ -1,25 +1,36 @@
 import streamlit as st
 
-# Títulos y subtítulos
 st.title('Calculadora de Puntuación para Beca')
-st.header('Ingresar los puntos obtenidos en cada categoría')
 
-# Máximos puntos por categoría
-max_puntos_docencia = 250
-max_puntos_actualizacion = 200
+# Definición de los máximos puntos por categoría y grado
+max_puntos_grado = 130  # Máximo para cualquier grado
+puntos_maestria = 100
+puntos_especialidad = 100
+puntos_doctorado = 130
 
-# Entrada de usuario para puntos actuales
-puntos_docencia = st.number_input('Puntos en Calidad en Docencia', min_value=0, max_value=max_puntos_docencia, value=0, step=1)
-puntos_actualizacion = st.number_input('Puntos en Actualización en el Último Año', min_value=0, max_value=max_puntos_actualizacion, value=0, step=1)
+# Checkbox para seleccionar el grado académico
+st.header('Grado Académico')
+maestria = st.checkbox('Maestría')
+especialidad = st.checkbox('Especialidad')
+doctorado = st.checkbox('Doctorado')
 
-# Cálculo de puntos faltantes
-faltan_docencia = max_puntos_docencia - puntos_docencia
-faltan_actualizacion = max_puntos_actualizacion - puntos_actualizacion
+# Lógica para asignar puntos según el grado seleccionado
+if maestria:
+    puntos_obtenidos = puntos_maestria
+elif especialidad:
+    puntos_obtenidos = puntos_especialidad
+elif doctorado:
+    puntos_obtenidos = puntos_doctorado
+else:
+    puntos_obtenidos = 0  # Si no se selecciona ningún grado
 
-# Visualización de resultados
-st.subheader('Resultados')
-st.write(f'### Puntos faltantes para alcanzar el máximo en Calidad en Docencia: {faltan_docencia}')
-st.write(f'### Puntos faltantes para alcanzar el máximo en Actualización en el Último Año: {faltan_actualizacion}')
+# Visualización de los puntos
+st.subheader('Puntuación por Grado Académico')
+st.write(f'Puntos obtenidos: {puntos_obtenidos}')
+st.write(f'Puntos máximos posibles: {max_puntos_grado}')
 
-# Visualización gráfica (opcional)
-st.bar_chart({"Puntos Obtenidos": [puntos_docencia, puntos_actualizacion], "Puntos Faltantes": [faltan_docencia, faltan_actualizacion]}, use_container_width=True)
+# Visualización gráfica de los puntos
+st.progress(puntos_obtenidos / max_puntos_grado)
+
+# Explicación de la visualización
+st.text("La barra muestra la proporción de puntos obtenidos respecto a los puntos máximos posibles.")
