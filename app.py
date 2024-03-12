@@ -10,6 +10,9 @@ max_puntos_actualizacion = 200  # Máximo total para actualización en el últim
 max_puntos_cursoscudd = 30
 max_puntos_capacitacion = 30  # Máximo para capacitación pedagógica
 max_puntos_disciplinar = 15  # Máximo para área disciplinar
+max_puntos_eventos = 12  # Máximo para asistencia a eventos
+puntos_por_evento = 3  # Puntos otorgados por evento asistido
+max_puntos_diplomados = 40  # Máximo para diplomados acreditados
 
 # Grado Académico
 st.header("1.1.1 Grado Académico")
@@ -59,6 +62,18 @@ with st.expander("Información sobre cursos del área disciplinar"):
     Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
     de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
     considerar para el rubro de área disciplinar es de 15 puntos.
+    """)
+
+# Asistencia a eventos profesionales
+eventos_asistidos = st.slider('1.1.2.3 Cantidad de eventos profesionales asistidos', 0, 4, 0)  # Asumiendo un máximo de 4 eventos para simplificar
+puntos_por_eventos = min(eventos_asistidos * puntos_por_evento, max_puntos_eventos)
+
+with st.expander("Información sobre asistencia a eventos profesionales"):
+    st.write("""
+    Deberá presentar comprobantes de asistencia a Seminarios, Coloquios, Congresos y Simposios expedidos durante el periodo enero-diciembre
+    por el cual concursa. Para el caso de los eventos académicos antes mencionados, éstos deberán
+    ser previamente avalados o registrados ante la Dirección Académica y/o el Centro Universitario
+    para el Desarrollo Docente. Se otorgarán 3 puntos por evento, máximo 12 puntos.
     """)
 
 # Cálculo del total de puntos en actualización
