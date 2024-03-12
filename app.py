@@ -137,10 +137,15 @@ puntos_software_educativo = min(software_educativo * 20, 80)
 antologias_guias_manuales = st.slider('1.1.4.3 Cantidad de antologías, guías, manuales aprobados', 0, 4, 0)
 puntos_antologias_guias_manuales = min(antologias_guias_manuales * 20, 80)
 
-# 1.1.4.4 Participación como instructor o profesor de cursos y/o talleres
+# 1.1.4.4A Participación como instructor o profesor de cursos y/o talleres
 # Asumimos un límite de 40 horas para simplificar, ajustando a 20 puntos máximo
-horas_instructor = st.slider('1.1.4.4 Total de horas como instructor o profesor de cursos y/o talleres', 0, 40, 0)
+horas_instructor = st.slider('1.1.4.4A Total de horas como instructor o profesor de cursos y/o talleres', 0, 40, 0)
 puntos_instructor = min(horas_instructor, 20)  # 1 punto por hora, máximo 20 puntos
+
+# 1.1.4.4B Participación como instructor o profesor de cursos y/o talleres
+# Asumimos un límite de 40 horas para simplificar, ajustando a 20 puntos máximo
+horas_instructorB = st.slider('1.1.4.4B Total de horas como instructor o profesor de cursos y/o talleres', 0, 40, 0)
+puntos_instructorB = min(horas_instructorB, 20)  # 1 punto por hora, máximo 20 puntos
 
 # 1.1.4.5 Elaboración de exámenes departamentales
 examenes_departamentales = st.slider('1.1.4.5 Cantidad de exámenes departamentales elaborados', 0, 2, 0)
@@ -155,7 +160,7 @@ st.write(f"Puntos por participación como instructor: {puntos_instructor}")
 st.write(f"Puntos por elaboración de exámenes departamentales: {puntos_examenes_departamentales}")
 
 # Cálculo del total de puntos en el rubro Desarrollo de la docencia
-total_puntos_desarrollo_docencia = puntos_material_didactico + puntos_software_educativo + puntos_antologias_guias_manuales + puntos_instructor + puntos_examenes_departamentales
+total_puntos_desarrollo_docencia = puntos_material_didactico + puntos_software_educativo + puntos_antologias_guias_manuales + puntos_instructor+puntos_instructorB + puntos_examenes_departamentales
 st.write(f"Total de puntos en Desarrollo de la docencia: {total_puntos_desarrollo_docencia} de 80")
 st.progress(total_puntos_desarrollo_docencia / 80)
 
