@@ -76,8 +76,21 @@ with st.expander("Información sobre asistencia a eventos profesionales"):
     para el Desarrollo Docente. Se otorgarán 3 puntos por evento, máximo 12 puntos.
     """)
 
+# Diplomado acreditado por el área pedagógica y/o disciplinar del docente
+diplomado1 = st.checkbox('1.1.2.4 Diplomado 1 completado (20 puntos)')
+diplomado2 = st.checkbox('Diplomado 2 completado (20 puntos)')
+puntos_por_diplomados = (diplomado1 + diplomado2) * 20
+
+with st.expander("Información sobre diplomados acreditados"):
+    st.write("""
+    Diplomado acreditado por el área pedagógica y/o disciplinar del docente. Deberá
+    anexar comprobante del diplomado concluido durante el periodo enero-diciembre. Este
+    diplomado deberá evidenciar la actualización en el área de formación profesional del docente
+    (100 – 120 horas). Se otorgarán 20 puntos por diplomado, máximo 40 puntos.
+    """)
+
 # Cálculo del total de puntos en actualización
-total_puntos_actualizacion = puntos_por_cursos + puntos_por_cursos_disciplinares + puntos_por_eventos #+ puntos_por_diplomados
+total_puntos_actualizacion = puntos_por_cursos + puntos_por_cursos_disciplinares + puntos_por_eventos + puntos_por_diplomados
 st.write(f"Total de puntos en Actualización en el último año: {total_puntos_actualizacion} de {max_puntos_actualizacion}")
 st.progress(total_puntos_actualizacion / max_puntos_actualizacion)
 
