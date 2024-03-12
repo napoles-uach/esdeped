@@ -126,23 +126,24 @@ st.progress(total_puntos_estancias / max_puntos_docencia)
 st.header("1.1.4 Desarrollo de la docencia")
 
 # 1.1.4.1 Material didáctico innovador
-material_didactico = st.number_input('1.1.4.1 Cantidad de materiales didácticos innovadores aprobados', min_value=0, max_value=4, step=1)
+material_didactico = st.slider('1.1.4.1 Cantidad de materiales didácticos innovadores aprobados', 0, 4, 0)
 puntos_material_didactico = min(material_didactico * 20, 80)
 
 # 1.1.4.2 Software educativo
-software_educativo = st.number_input('1.1.4.2 Cantidad de software educativo aprobado', min_value=0, max_value=4, step=1)
+software_educativo = st.slider('1.1.4.2 Cantidad de software educativo aprobado', 0, 4, 0)
 puntos_software_educativo = min(software_educativo * 20, 80)
 
 # 1.1.4.3 Antologías, guías, manuales
-antologias_guias_manuales = st.number_input('1.1.4.3 Cantidad de antologías, guías, manuales aprobados', min_value=0, max_value=4, step=1)
+antologias_guias_manuales = st.slider('1.1.4.3 Cantidad de antologías, guías, manuales aprobados', 0, 4, 0)
 puntos_antologias_guias_manuales = min(antologias_guias_manuales * 20, 80)
 
 # 1.1.4.4 Participación como instructor o profesor de cursos y/o talleres
-horas_instructor = st.number_input('1.1.4.4.A Total de horas como instructor o profesor de cursos y/o talleres', min_value=0, max_value=40, step=1)  # Asumimos un límite de 40 horas para simplificar
+# Asumimos un límite de 40 horas para simplificar, ajustando a 20 puntos máximo
+horas_instructor = st.slider('1.1.4.4 Total de horas como instructor o profesor de cursos y/o talleres', 0, 40, 0)
 puntos_instructor = min(horas_instructor, 20)  # 1 punto por hora, máximo 20 puntos
 
 # 1.1.4.5 Elaboración de exámenes departamentales
-examenes_departamentales = st.number_input('1.1.4.5 Cantidad de exámenes departamentales elaborados', min_value=0, max_value=2, step=1)
+examenes_departamentales = st.slider('1.1.4.5 Cantidad de exámenes departamentales elaborados', 0, 2, 0)
 puntos_examenes_departamentales = min(examenes_departamentales * 10, 20)
 
 # Mostrar los puntos obtenidos en cada subcategoría
@@ -156,6 +157,8 @@ st.write(f"Puntos por elaboración de exámenes departamentales: {puntos_examene
 # Cálculo del total de puntos en el rubro Desarrollo de la docencia
 total_puntos_desarrollo_docencia = puntos_material_didactico + puntos_software_educativo + puntos_antologias_guias_manuales + puntos_instructor + puntos_examenes_departamentales
 st.write(f"Total de puntos en Desarrollo de la docencia: {total_puntos_desarrollo_docencia} de 80")
+st.progress(total_puntos_desarrollo_docencia / 80)
+
 
 
 # Cálculo del total de puntos en actualización
