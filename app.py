@@ -65,6 +65,7 @@ with st.expander("Información sobre cursos del área disciplinar"):
     de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
     considerar para el rubro de área disciplinar es de 15 puntos.
     """)
+st.progress(puntos_por_cursos_disciplinares / max_puntos_docencia)
 
 # Asistencia a eventos profesionales
 eventos_asistidos = st.slider('1.1.2.3 Cantidad de eventos profesionales asistidos', 0, 4, 0)  # Asumiendo un máximo de 4 eventos para simplificar
