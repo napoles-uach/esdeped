@@ -160,9 +160,16 @@ st.write(f"Puntos por participación como instructor: {puntos_instructor}")
 st.write(f"Puntos por elaboración de exámenes departamentales: {puntos_examenes_departamentales}")
 
 # Cálculo del total de puntos en el rubro Desarrollo de la docencia
-total_puntos_desarrollo_docencia = puntos_material_didactico + puntos_software_educativo + puntos_antologias_guias_manuales + puntos_instructor+puntos_instructorB + puntos_examenes_departamentales
-st.write(f"Total de puntos en Desarrollo de la docencia: {total_puntos_desarrollo_docencia} de 80")
-st.progress(total_puntos_desarrollo_docencia / 80)
+#total_puntos_desarrollo_docencia = puntos_material_didactico + puntos_software_educativo + puntos_antologias_guias_manuales + puntos_instructor+puntos_instructorB + puntos_examenes_departamentales
+#st.write(f"Total de puntos en Desarrollo de la docencia: {total_puntos_desarrollo_docencia} de 80")
+#st.progress(total_puntos_desarrollo_docencia / 80)
+
+# Asegúrate de que el total de puntos no exceda el máximo permitido antes de calcular el porcentaje para la barra de progreso.
+total_puntos_desarrollo_docencia = min(total_puntos_desarrollo_docencia, 80)
+
+# Luego calcula el porcentaje para la barra de progreso asegurándote de que el valor esté entre 0 y 1.
+porcentaje_total_desarrollo_docencia = total_puntos_desarrollo_docencia / 80
+st.progress(porcentaje_total_desarrollo_docencia)
 
 
 
