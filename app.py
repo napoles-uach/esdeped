@@ -94,6 +94,36 @@ with st.expander("Información sobre diplomados acreditados"):
     """)
 st.progress(puntos_por_diplomados / max_puntos_docencia)
 
+st.header("1.1.2.5 Estancias cortas autorizadas")
+
+with st.expander("Información sobre Estancias cortas autorizadas"):
+    st.write("""
+    El docente deberá presentar tres documentos:
+    ● Autorización por parte de la Secretaría Académica y/o de Investigación y Posgrado.
+    ● Certificación de la estancia corta académica o de investigación de la institución receptora.
+    Puntuación máxima: 200 puntos.
+    """)
+
+# Estancias nacionales
+semanas_nacionales = st.slider('1.1.2.5.A Estancias nacionales (semanas)', 0, 10, 0)  # Asumiendo un máximo de 10 semanas para simplificar
+puntos_nacionales = min(semanas_nacionales * 10, 100)
+
+# Estancias internacionales
+semanas_internacionales = st.slider('1.1.2.5.B Estancias internacionales (semanas)', 0, 7, 0)  # Asumiendo un máximo de 7 semanas para alcanzar 100 puntos
+puntos_internacionales = min(semanas_internacionales * 15, 100)
+
+# Muestra de puntos por estancias nacionales e internacionales y barras de progreso
+st.write(f"Puntos por estancias nacionales: {puntos_nacionales} de 100")
+st.progress(puntos_nacionales / 100)
+st.write(f"Puntos por estancias internacionales: {puntos_internacionales} de 100")
+st.progress(puntos_internacionales / 100)
+
+# Cálculo del total de puntos en el rubro de estancias cortas autorizadas
+total_puntos_estancias = puntos_nacionales + puntos_internacionales
+st.write(f"Total de puntos por estancias cortas autorizadas: {total_puntos_estancias} de 200")
+st.progress(total_puntos_estancias / 200)
+
+
 # Cálculo del total de puntos en actualización
 total_puntos_actualizacion = puntos_por_cursos + puntos_por_cursos_disciplinares + puntos_por_eventos + puntos_por_diplomados
 st.write(f"Total de puntos en Actualización en el último año: {total_puntos_actualizacion} de {max_puntos_actualizacion}")
