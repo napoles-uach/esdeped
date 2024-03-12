@@ -113,14 +113,14 @@ semanas_internacionales = st.slider('1.1.2.5.B Estancias internacionales (semana
 puntos_internacionales = min(semanas_internacionales * 15, 100)
 
 # Muestra de puntos por estancias nacionales e internacionales y barras de progreso
-st.write(f"Puntos por estancias nacionales: {puntos_nacionales} de 100")
-st.progress(puntos_nacionales / max_puntos_docencia)
-st.write(f"Puntos por estancias internacionales: {puntos_internacionales} de 100")
-st.progress(puntos_internacionales / max_puntos_docencia)
+#st.write(f"Puntos por estancias nacionales: {puntos_nacionales} de 100")
+#st.progress(puntos_nacionales / max_puntos_docencia)
+#st.write(f"Puntos por estancias internacionales: {puntos_internacionales} de 100")
+#st.progress(puntos_internacionales / max_puntos_docencia)
 
 # Cálculo del total de puntos en el rubro de estancias cortas autorizadas
 total_puntos_estancias = puntos_nacionales + puntos_internacionales
-st.write(f"Total de puntos por estancias cortas autorizadas: {total_puntos_estancias} de 200")
+#st.write(f"Total de puntos por estancias cortas autorizadas: {total_puntos_estancias} de 200")
 st.progress(total_puntos_estancias / max_puntos_docencia)
 
 
