@@ -9,6 +9,7 @@ max_puntos_academico = 130  # Máximo para grado académico 1.1.1
 max_puntos_actualizacion = 200  # Máximo total para actualización en el último año 1.1.2
 max_puntos_cursoscudd = 30
 max_puntos_capacitacion = 30  # Máximo para capacitación pedagógica
+max_puntos_disciplinar = 15  # Máximo para área disciplinar
 
 # Grado Académico
 st.header("1.1.1 Grado Académico")
@@ -46,6 +47,19 @@ with st.expander("Información sobre cursos de formación docente"):
     considerar para el rubro de capacitación pedagógica es de 30 puntos.
     """)
 st.progress(puntos_por_cursos / max_puntos_capacitacion)
+
+# Cursos o talleres del área disciplinar
+cursos_disciplinares_completados = st.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
+puntos_por_cursos_disciplinares = min(0.5 * cursos_disciplinares_completados, max_puntos_disciplinar)
+
+with st.expander("Información sobre cursos del área disciplinar"):
+    st.write("""
+    Se tomarán en cuenta los cursos o talleres en el área disciplinar del docente cuyo comprobante esté fechado dentro del periodo enero-
+    diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
+    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
+    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
+    considerar para el rubro de área disciplinar es de 15 puntos.
+    """)
 
 # Cálculo del total de puntos en actualización
 total_puntos_actualizacion = puntos_por_cursos #+ puntos_por_cursos_disciplinares + puntos_por_eventos + puntos_por_diplomados
