@@ -46,7 +46,7 @@ with st.expander("Información sobre cursos de formación docente"):
     de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
     considerar para el rubro de capacitación pedagógica es de 30 puntos.
     """)
-st.progress(puntos_por_cursos / max_puntos_capacitacion)
+#st.progress(puntos_por_cursos / max_puntos_capacitacion)
 
 # Cursos o talleres del área disciplinar
 cursos_disciplinares_completados = st.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
