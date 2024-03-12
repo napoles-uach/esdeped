@@ -92,6 +92,7 @@ with st.expander("Información sobre diplomados acreditados"):
     diplomado deberá evidenciar la actualización en el área de formación profesional del docente
     (100 – 120 horas). Se otorgarán 20 puntos por diplomado, máximo 40 puntos.
     """)
+st.progress(puntos_por_diplomados / max_puntos_docencia)
 
 # Cálculo del total de puntos en actualización
 total_puntos_actualizacion = puntos_por_cursos + puntos_por_cursos_disciplinares + puntos_por_eventos + puntos_por_diplomados
