@@ -77,8 +77,8 @@ with st.expander("Información sobre asistencia a eventos profesionales"):
     """)
 
 # Diplomado acreditado por el área pedagógica y/o disciplinar del docente
-diplomado1 = st.checkbox('Diplomado 1 completado (20 puntos)')
-diplomado2 = st.checkbox('Diplomado 2 completado (20 puntos)')
+diplomado1 = st.checkbox('1.1.2.4 Diplomado 1 completado (20 puntos)')
+diplomado2 = st.checkbox('1.1.2.4 Diplomado 2 completado (20 puntos)')
 puntos_por_diplomados = (diplomado1 + diplomado2) * 20
 
 with st.expander("Información sobre diplomados acreditados"):
