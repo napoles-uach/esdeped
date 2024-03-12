@@ -78,6 +78,7 @@ with st.expander("Información sobre asistencia a eventos profesionales"):
     ser previamente avalados o registrados ante la Dirección Académica y/o el Centro Universitario
     para el Desarrollo Docente. Se otorgarán 3 puntos por evento, máximo 12 puntos.
     """)
+st.progress(puntos_por_eventos / max_puntos_docencia)
 
 # Diplomado acreditado por el área pedagógica y/o disciplinar del docente
 diplomado1 = st.checkbox('1.1.2.4 Diplomado 1 completado (20 puntos)')
