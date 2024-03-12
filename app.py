@@ -51,6 +51,7 @@ with st.expander("Información sobre cursos de formación docente"):
     considerar para el rubro de capacitación pedagógica es de 30 puntos.
     """)
 #st.progress(puntos_por_cursos / max_puntos_capacitacion)
+st.progress(puntos_por_cursos / max_puntos_docencia)
 
 # Cursos o talleres del área disciplinar
 cursos_disciplinares_completados = st.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
