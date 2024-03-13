@@ -183,4 +183,4 @@ st.subheader(f'Total de puntos: {total_general} de {max_total_general}')
 st.progress(total_general / max_total_general)
 
 st.sidebar.write(str(total_general)+'/'+ str(max_total_general))
-st.sidebar.bar_chart([0,1])
+st.sidebar.bar_chart([total_general,max_total_general])
