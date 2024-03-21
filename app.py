@@ -60,18 +60,19 @@ puntos_por_cursos = min(0.5 * cursos_completados, max_puntos_capacitacion)
 col2_2.progress(puntos_por_cursos / max_puntos_docencia)
 
 # Cursos o talleres del área disciplinar
-cursos_disciplinares_completados = col1_2.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
+col1_3,col2_3 = st.columns([5,5])
+cursos_disciplinares_completados = col1_3.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
 puntos_por_cursos_disciplinares = min(0.5 * cursos_disciplinares_completados, max_puntos_disciplinar)
 
-with st.expander("Información sobre cursos del área disciplinar"):
-    st.write("""
-    Se tomarán en cuenta los cursos o talleres en el área disciplinar del docente cuyo comprobante esté fechado dentro del periodo enero-
-    diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
-    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
-    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
-    considerar para el rubro de área disciplinar es de 15 puntos.
-    """)
-st.progress(puntos_por_cursos_disciplinares / max_puntos_docencia)
+#with st.expander("Información sobre cursos del área disciplinar"):
+#    st.write("""
+#    Se tomarán en cuenta los cursos o talleres en el área disciplinar del docente cuyo comprobante esté fechado dentro del periodo enero-
+#    diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
+#    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
+#    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
+#    considerar para el rubro de área disciplinar es de 15 puntos.
+#    """)
+col2_3.progress(puntos_por_cursos_disciplinares / max_puntos_docencia)
 
 # Asistencia a eventos profesionales
 eventos_asistidos = st.slider('1.1.2.3 Cantidad de eventos profesionales asistidos', 0, 4, 0)  # Asumiendo un máximo de 4 eventos para simplificar
