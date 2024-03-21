@@ -89,8 +89,9 @@ with st.expander("Información sobre asistencia a eventos profesionales"):
 col2_4.progress(puntos_por_eventos / max_puntos_docencia)
 
 # Diplomado acreditado por el área pedagógica y/o disciplinar del docente
-diplomado1 = st.checkbox('1.1.2.4 Diplomado 1 completado (20 puntos)')
-diplomado2 = st.checkbox('1.1.2.4 Diplomado 2 completado (20 puntos)')
+col1_5,col2_5 = st.columns([5,5])
+diplomado1 = col1_5.checkbox('1.1.2.4 Diplomado 1 completado (20 puntos)')
+diplomado2 = col1_5.checkbox('1.1.2.4 Diplomado 2 completado (20 puntos)')
 puntos_por_diplomados = (diplomado1 + diplomado2) * 20
 
 with st.expander("Información sobre diplomados acreditados"):
@@ -100,7 +101,7 @@ with st.expander("Información sobre diplomados acreditados"):
     diplomado deberá evidenciar la actualización en el área de formación profesional del docente
     (100 – 120 horas). Se otorgarán 20 puntos por diplomado, máximo 40 puntos.
     """)
-st.progress(puntos_por_diplomados / max_puntos_docencia)
+col2_5.progress(puntos_por_diplomados / max_puntos_docencia)
 
 st.header("1.1.2.5 Estancias cortas autorizadas")
 
