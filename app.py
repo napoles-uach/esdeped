@@ -152,12 +152,12 @@ examenes_departamentales = st.slider('1.1.4.5 Cantidad de exámenes departamenta
 puntos_examenes_departamentales = min(examenes_departamentales * 10, 20)
 
 # Mostrar los puntos obtenidos en cada subcategoría
-st.subheader("Puntos obtenidos en Desarrollo de la docencia")
-st.write(f"Puntos por material didáctico innovador: {puntos_material_didactico}")
-st.write(f"Puntos por software educativo: {puntos_software_educativo}")
-st.write(f"Puntos por antologías, guías, manuales: {puntos_antologias_guias_manuales}")
-st.write(f"Puntos por participación como instructor: {puntos_instructor}")
-st.write(f"Puntos por elaboración de exámenes departamentales: {puntos_examenes_departamentales}")
+#st.subheader("Puntos obtenidos en Desarrollo de la docencia")
+#st.write(f"Puntos por material didáctico innovador: {puntos_material_didactico}")
+#st.write(f"Puntos por software educativo: {puntos_software_educativo}")
+#st.write(f"Puntos por antologías, guías, manuales: {puntos_antologias_guias_manuales}")
+#st.write(f"Puntos por participación como instructor: {puntos_instructor}")
+#st.write(f"Puntos por elaboración de exámenes departamentales: {puntos_examenes_departamentales}")
 
 # Cálculo del total de puntos en el rubro Desarrollo de la docencia
 total_puntos_desarrollo_docencia = puntos_material_didactico + puntos_software_educativo + puntos_antologias_guias_manuales + puntos_instructor+puntos_instructorB + puntos_examenes_departamentales
