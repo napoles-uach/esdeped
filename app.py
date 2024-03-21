@@ -16,7 +16,7 @@ max_puntos_diplomados = 40  # Máximo para diplomados acreditados
 
 # Grado Académico
 st.header("1.1.1 Grado Académico")
-col1,col2 = st.columns([5,5])
+col1_1,col2_1 = st.columns([5,5])
 grado_academico = col1.selectbox('Selecciona tu grado académico máximo',
                                ['Ninguno', 'Licenciatura', 'Maestría', 'Doctorado'],
                                index=0)
@@ -37,13 +37,13 @@ elif grado_academico == 'Doctorado':
 #    """)
 
 #st.progress(puntos_grado_academico / max_puntos_academico)
-col2.progress(puntos_grado_academico / max_puntos_docencia)
+col2_1.progress(puntos_grado_academico / max_puntos_docencia)
 
 # Actualización en el último año
 st.header("1.1.2 Actualización en el último año")
 
 # Cursos de formación docente y/o actualización pedagógica
-cursos_completados = col1.slider('1.1.2.1 Cursos de formación docente y/o actualización pedagógica completados (horas)', 0, 60, 0, 1)
+cursos_completados = col1_1.slider('1.1.2.1 Cursos de formación docente y/o actualización pedagógica completados (horas)', 0, 60, 0, 1)
 puntos_por_cursos = min(0.5 * cursos_completados, max_puntos_capacitacion)
 
 #with st.expander("Información sobre cursos de formación docente"):
@@ -55,11 +55,11 @@ puntos_por_cursos = min(0.5 * cursos_completados, max_puntos_capacitacion)
 #    considerar para el rubro de capacitación pedagógica es de 30 puntos.
 #    """)
 #st.progress(puntos_por_cursos / max_puntos_capacitacion)
-
-col2.progress(puntos_por_cursos / max_puntos_docencia)
+col1_2,col2_2 = st.columns([5,5])
+col2_2.progress(puntos_por_cursos / max_puntos_docencia)
 
 # Cursos o talleres del área disciplinar
-cursos_disciplinares_completados = st.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
+cursos_disciplinares_completados = col1_2.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
 puntos_por_cursos_disciplinares = min(0.5 * cursos_disciplinares_completados, max_puntos_disciplinar)
 
 with st.expander("Información sobre cursos del área disciplinar"):
