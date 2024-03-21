@@ -161,8 +161,9 @@ st.write(f"Puntos por elaboración de exámenes departamentales: {puntos_examene
 
 # Cálculo del total de puntos en el rubro Desarrollo de la docencia
 total_puntos_desarrollo_docencia = puntos_material_didactico + puntos_software_educativo + puntos_antologias_guias_manuales + puntos_instructor+puntos_instructorB + puntos_examenes_departamentales
+total_puntos_desarrollo_docencia=min(total_puntos_desarrollo_docencia,80)
 st.write(f"Total de puntos en Desarrollo de la docencia: {total_puntos_desarrollo_docencia} de 80")
-st.progress(min(total_puntos_desarrollo_docencia,80) / 80)
+st.progress(total_puntos_desarrollo_docencia / 80)
 
 
 
