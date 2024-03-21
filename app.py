@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.title('Calculadora de Puntuación para Beca')
-'''# I. CALIDAD. Se otorgará un máximo de 700 puntos.
+'''### I. CALIDAD. Se otorgará un máximo de 700 puntos.
  1.Calidad en docencia. Puntuación máxima: 250 puntos'''
 # Definiciones de puntos máximos y por actividad
 max_puntos_docencia = 250 # Puntuaciion maxima, 1.0 Calidad en docencia
