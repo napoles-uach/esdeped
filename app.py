@@ -43,19 +43,20 @@ col2.progress(puntos_grado_academico / max_puntos_docencia)
 st.header("1.1.2 Actualización en el último año")
 
 # Cursos de formación docente y/o actualización pedagógica
-cursos_completados = st.slider('1.1.2.1 Cursos de formación docente y/o actualización pedagógica completados (horas)', 0, 60, 0, 1)
+cursos_completados = col1.slider('1.1.2.1 Cursos de formación docente y/o actualización pedagógica completados (horas)', 0, 60, 0, 1)
 puntos_por_cursos = min(0.5 * cursos_completados, max_puntos_capacitacion)
 
-with st.expander("Información sobre cursos de formación docente"):
-    st.write("""
-    Se tomarán en cuenta los cursos o talleres cuyo comprobante esté fechado dentro del periodo
-    enero-diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
-    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
-    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
-    considerar para el rubro de capacitación pedagógica es de 30 puntos.
-    """)
+#with st.expander("Información sobre cursos de formación docente"):
+#    st.write("""
+#    Se tomarán en cuenta los cursos o talleres cuyo comprobante esté fechado dentro del periodo
+#    enero-diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
+#    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
+#    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
+#    considerar para el rubro de capacitación pedagógica es de 30 puntos.
+#    """)
 #st.progress(puntos_por_cursos / max_puntos_capacitacion)
-st.progress(puntos_por_cursos / max_puntos_docencia)
+
+col2.progress(puntos_por_cursos / max_puntos_docencia)
 
 # Cursos o talleres del área disciplinar
 cursos_disciplinares_completados = st.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
