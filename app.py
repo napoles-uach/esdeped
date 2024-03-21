@@ -75,17 +75,18 @@ puntos_por_cursos_disciplinares = min(0.5 * cursos_disciplinares_completados, ma
 col2_3.progress(puntos_por_cursos_disciplinares / max_puntos_docencia)
 
 # Asistencia a eventos profesionales
-eventos_asistidos = st.slider('1.1.2.3 Cantidad de eventos profesionales asistidos', 0, 4, 0)  # Asumiendo un máximo de 4 eventos para simplificar
+col1_4,col2_4 = st.columns([5,5])
+eventos_asistidos = col1_4.slider('1.1.2.3 Cantidad de eventos profesionales asistidos', 0, 4, 0)  # Asumiendo un máximo de 4 eventos para simplificar
 puntos_por_eventos = min(eventos_asistidos * puntos_por_evento, max_puntos_eventos)
 
-with st.expander("Información sobre asistencia a eventos profesionales"):
-    st.write("""
-    Deberá presentar comprobantes de asistencia a Seminarios, Coloquios, Congresos y Simposios expedidos durante el periodo enero-diciembre
-    por el cual concursa. Para el caso de los eventos académicos antes mencionados, éstos deberán
-    ser previamente avalados o registrados ante la Dirección Académica y/o el Centro Universitario
-    para el Desarrollo Docente. Se otorgarán 3 puntos por evento, máximo 12 puntos.
-    """)
-st.progress(puntos_por_eventos / max_puntos_docencia)
+#with st.expander("Información sobre asistencia a eventos profesionales"):
+#    st.write("""
+#    Deberá presentar comprobantes de asistencia a Seminarios, Coloquios, Congresos y Simposios expedidos durante el periodo enero-diciembre
+#    por el cual concursa. Para el caso de los eventos académicos antes mencionados, éstos deberán
+#    ser previamente avalados o registrados ante la Dirección Académica y/o el Centro Universitario
+#    para el Desarrollo Docente. Se otorgarán 3 puntos por evento, máximo 12 puntos.
+#    """)
+col2_4.progress(puntos_por_eventos / max_puntos_docencia)
 
 # Diplomado acreditado por el área pedagógica y/o disciplinar del docente
 diplomado1 = st.checkbox('1.1.2.4 Diplomado 1 completado (20 puntos)')
