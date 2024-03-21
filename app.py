@@ -17,7 +17,7 @@ max_puntos_diplomados = 40  # Máximo para diplomados acreditados
 # Grado Académico
 st.header("1.1.1 Grado Académico")
 col1_1,col2_1 = st.columns([5,5])
-grado_academico = col1.selectbox('Selecciona tu grado académico máximo',
+grado_academico = col1_1.selectbox('Selecciona tu grado académico máximo',
                                ['Ninguno', 'Licenciatura', 'Maestría', 'Doctorado'],
                                index=0)
 puntos_grado_academico = 0
