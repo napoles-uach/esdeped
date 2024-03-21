@@ -30,7 +30,7 @@ elif grado_academico == 'Doctorado':
 
 
 
-with col1.expander("Información sobre Grado Académico"):
+with col2.expander("Información sobre Grado Académico"):
     st.write("""
     Se considera sólo el grado máximo de estudios, por lo que deberá presentar el Título del máximo
     grado de estudios. No se aceptarán Actas de Examen. Máximo 130 puntos.
