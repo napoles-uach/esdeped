@@ -47,14 +47,14 @@ col1_2,col2_2 = st.columns([5,5])
 cursos_completados = col1_2.slider('1.1.2.1 Cursos de formación docente y/o actualización pedagógica completados (horas)', 0, 60, 0, 1)
 puntos_por_cursos = min(0.5 * cursos_completados, max_puntos_capacitacion)
 
-#with st.expander("Información sobre cursos de formación docente"):
-#    st.write("""
-#    Se tomarán en cuenta los cursos o talleres cuyo comprobante esté fechado dentro del periodo
-#    enero-diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
-#    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
-#    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
-#    considerar para el rubro de capacitación pedagógica es de 30 puntos.
-#    """)
+with st.expander("Información sobre cursos de formación docente"):
+    st.write("""
+    Se tomarán en cuenta los cursos o talleres cuyo comprobante esté fechado dentro del periodo
+    enero-diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
+    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
+    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
+    considerar para el rubro de capacitación pedagógica es de 30 puntos.
+    """)
 #st.progress(puntos_por_cursos / max_puntos_capacitacion)
 
 col2_2.progress(puntos_por_cursos / max_puntos_docencia)
@@ -64,14 +64,14 @@ col1_3,col2_3 = st.columns([5,5])
 cursos_disciplinares_completados = col1_3.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
 puntos_por_cursos_disciplinares = min(0.5 * cursos_disciplinares_completados, max_puntos_disciplinar)
 
-#with st.expander("Información sobre cursos del área disciplinar"):
-#    st.write("""
-#    Se tomarán en cuenta los cursos o talleres en el área disciplinar del docente cuyo comprobante esté fechado dentro del periodo enero-
-#    diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
-#    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
-#    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
-#    considerar para el rubro de área disciplinar es de 15 puntos.
-#    """)
+with st.expander("Información sobre cursos del área disciplinar"):
+    st.write("""
+    Se tomarán en cuenta los cursos o talleres en el área disciplinar del docente cuyo comprobante esté fechado dentro del periodo enero-
+    diciembre por el cual concursa. No se tomarán en cuenta cursos que formen parte de un
+    Doctorado, Maestría, Especialidad o Diplomado. Se otorgará 0.5 puntos por cada hora y en caso
+    de no estar asentado el número de horas se considerarán 3 horas por día. El puntaje máximo a
+    considerar para el rubro de área disciplinar es de 15 puntos.
+    """)
 col2_3.progress(puntos_por_cursos_disciplinares / max_puntos_docencia)
 
 # Asistencia a eventos profesionales
@@ -79,13 +79,13 @@ col1_4,col2_4 = st.columns([5,5])
 eventos_asistidos = col1_4.slider('1.1.2.3 Cantidad de eventos profesionales asistidos', 0, 4, 0)  # Asumiendo un máximo de 4 eventos para simplificar
 puntos_por_eventos = min(eventos_asistidos * puntos_por_evento, max_puntos_eventos)
 
-#with st.expander("Información sobre asistencia a eventos profesionales"):
-#    st.write("""
-#    Deberá presentar comprobantes de asistencia a Seminarios, Coloquios, Congresos y Simposios expedidos durante el periodo enero-diciembre
-#    por el cual concursa. Para el caso de los eventos académicos antes mencionados, éstos deberán
-#    ser previamente avalados o registrados ante la Dirección Académica y/o el Centro Universitario
-#    para el Desarrollo Docente. Se otorgarán 3 puntos por evento, máximo 12 puntos.
-#    """)
+with st.expander("Información sobre asistencia a eventos profesionales"):
+    st.write("""
+    Deberá presentar comprobantes de asistencia a Seminarios, Coloquios, Congresos y Simposios expedidos durante el periodo enero-diciembre
+    por el cual concursa. Para el caso de los eventos académicos antes mencionados, éstos deberán
+    ser previamente avalados o registrados ante la Dirección Académica y/o el Centro Universitario
+    para el Desarrollo Docente. Se otorgarán 3 puntos por evento, máximo 12 puntos.
+    """)
 col2_4.progress(puntos_por_eventos / max_puntos_docencia)
 
 # Diplomado acreditado por el área pedagógica y/o disciplinar del docente
