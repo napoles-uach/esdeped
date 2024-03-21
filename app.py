@@ -190,7 +190,7 @@ total_general = puntos_grado_academico + total_puntos_actualizacion
 max_total_general = max_puntos_docencia #max_puntos_academico + max_puntos_actualizacion  # Ajusta según el máximo total de todos los rubros
 st.header('Total de puntos obtenidos')
 st.subheader(f'Total de puntos: {total_general} de {max_total_general}')
-st.progress(total_general / max_total_general)
+st.progress(min(total_general,max_total_general) / max_total_general)
 
 st.sidebar.write("# "+str(total_general)+'/'+ str(max_total_general))
 st.sidebar.bar_chart([total_general,max_total_general])
