@@ -32,8 +32,9 @@ with st.expander("Información sobre Grado Académico"):
     Se considera sólo el grado máximo de estudios, por lo que deberá presentar el Título del máximo
     grado de estudios. No se aceptarán Actas de Examen. Máximo 130 puntos.
     """)
+col1,col2 = st.columns([5,5])
 #st.progress(puntos_grado_academico / max_puntos_academico)
-st.progress(puntos_grado_academico / max_puntos_docencia)
+col2.progress(puntos_grado_academico / max_puntos_docencia)
 
 # Actualización en el último año
 st.header("1.1.2 Actualización en el último año")
