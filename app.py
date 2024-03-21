@@ -27,12 +27,14 @@ elif grado_academico == 'Maestría':
 elif grado_academico == 'Doctorado':
     puntos_grado_academico = 130
 
-with st.expander("Información sobre Grado Académico"):
+col1,col2 = st.columns([5,5])
+
+with col1.expander("Información sobre Grado Académico"):
     st.write("""
     Se considera sólo el grado máximo de estudios, por lo que deberá presentar el Título del máximo
     grado de estudios. No se aceptarán Actas de Examen. Máximo 130 puntos.
     """)
-col1,col2 = st.columns([5,5])
+
 #st.progress(puntos_grado_academico / max_puntos_academico)
 col2.progress(puntos_grado_academico / max_puntos_docencia)
 
