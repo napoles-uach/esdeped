@@ -43,7 +43,8 @@ col2_1.progress(puntos_grado_academico / max_puntos_docencia)
 st.header("1.1.2 Actualización en el último año")
 
 # Cursos de formación docente y/o actualización pedagógica
-cursos_completados = col1_1.slider('1.1.2.1 Cursos de formación docente y/o actualización pedagógica completados (horas)', 0, 60, 0, 1)
+col1_2,col2_2 = st.columns([5,5])
+cursos_completados = col1_2.slider('1.1.2.1 Cursos de formación docente y/o actualización pedagógica completados (horas)', 0, 60, 0, 1)
 puntos_por_cursos = min(0.5 * cursos_completados, max_puntos_capacitacion)
 
 #with st.expander("Información sobre cursos de formación docente"):
@@ -55,7 +56,7 @@ puntos_por_cursos = min(0.5 * cursos_completados, max_puntos_capacitacion)
 #    considerar para el rubro de capacitación pedagógica es de 30 puntos.
 #    """)
 #st.progress(puntos_por_cursos / max_puntos_capacitacion)
-col1_2,col2_2 = st.columns([5,5])
+
 col2_2.progress(puntos_por_cursos / max_puntos_docencia)
 
 # Cursos o talleres del área disciplinar
