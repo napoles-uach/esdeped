@@ -13,7 +13,7 @@ max_puntos_disciplinar = 15  # Máximo para área disciplinar
 max_puntos_eventos = 12  # Máximo para asistencia a eventos
 puntos_por_evento = 3  # Puntos otorgados por evento asistido
 max_puntos_diplomados = 40  # Máximo para diplomados acreditados
-
+###############################################################################
 # Grado Académico
 st.header("1.1.1 Grado Académico")
 col1_1,col2_1 = st.columns([5,5])
@@ -38,7 +38,7 @@ with st.expander("Información sobre Grado Académico"):
 
 #st.progress(puntos_grado_academico / max_puntos_academico)
 col2_1.progress(puntos_grado_academico / max_puntos_docencia)
-
+####################################################################################################
 # Actualización en el último año
 st.header("1.1.2 Actualización en el último año")
 
@@ -58,7 +58,7 @@ with st.expander("Información sobre cursos de formación docente"):
 #st.progress(puntos_por_cursos / max_puntos_capacitacion)
 
 col2_2.progress(puntos_por_cursos / max_puntos_docencia)
-
+################################################################################################################
 # Cursos o talleres del área disciplinar
 col1_3,col2_3 = st.columns([5,5])
 cursos_disciplinares_completados = col1_3.slider('1.1.2.2 Cursos o talleres del área disciplinar completados (horas)', 0, 30, 0, 1)
@@ -73,7 +73,7 @@ with st.expander("Información sobre cursos del área disciplinar"):
     considerar para el rubro de área disciplinar es de 15 puntos.
     """)
 col2_3.progress(puntos_por_cursos_disciplinares / max_puntos_docencia)
-
+##################################################################################################################3
 # Asistencia a eventos profesionales
 col1_4,col2_4 = st.columns([5,5])
 eventos_asistidos = col1_4.slider('1.1.2.3 Cantidad de eventos profesionales asistidos', 0, 4, 0)  # Asumiendo un máximo de 4 eventos para simplificar
@@ -87,7 +87,7 @@ with st.expander("Información sobre asistencia a eventos profesionales"):
     para el Desarrollo Docente. Se otorgarán 3 puntos por evento, máximo 12 puntos.
     """)
 col2_4.progress(puntos_por_eventos / max_puntos_docencia)
-
+###############################################################################################################333
 # Diplomado acreditado por el área pedagógica y/o disciplinar del docente
 col1_5,col2_5 = st.columns([5,5])
 diplomado1 = col1_5.checkbox('1.1.2.4 Diplomado 1 completado (20 puntos)')
@@ -102,7 +102,7 @@ with st.expander("Información sobre diplomados acreditados"):
     (100 – 120 horas). Se otorgarán 20 puntos por diplomado, máximo 40 puntos.
     """)
 col2_5.progress(puntos_por_diplomados / max_puntos_docencia)
-
+###########################################################################################################3
 st.header("1.1.2.5 Estancias cortas autorizadas")
 
 with st.expander("Información sobre Estancias cortas autorizadas"):
@@ -126,7 +126,7 @@ puntos_internacionales = min(semanas_internacionales * 15, 100)
 #st.progress(puntos_nacionales / max_puntos_docencia)
 #st.write(f"Puntos por estancias internacionales: {puntos_internacionales} de 100")
 #st.progress(puntos_internacionales / max_puntos_docencia)
-
+##########################################################################################################################
 # Cálculo del total de puntos en el rubro de estancias cortas autorizadas
 total_puntos_estancias = puntos_nacionales + puntos_internacionales
 #st.write(f"Total de puntos por estancias cortas autorizadas: {total_puntos_estancias} de 200")
